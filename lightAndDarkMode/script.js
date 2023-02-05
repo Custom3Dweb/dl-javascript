@@ -52,6 +52,7 @@ function switchTheme(event) {
 
 toggleSwitch.addEventListener('change', switchTheme);
 
+
 // Check Local Storage For Theme
 
 const currentTheme = localStorage.getItem('theme');
@@ -63,3 +64,4 @@ if (currentTheme) {
         darkMode();
     }
 }
+
