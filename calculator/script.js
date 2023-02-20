@@ -1,6 +1,17 @@
+// Loop to generate number buttons
+const buttonEl = document.querySelector('.calculator-buttons');
+const numbersArray = [7,8,9,4,5,6,1,2,3];
+numbersArray.forEach((number) => {
+    const numberBtn = document.createElement('button');
+    numberBtn.setAttribute('value', number);
+    numberBtn.textContent = number;
+    buttonEl.appendChild(numberBtn);
+})
+
 const calculatorDisplay = document.querySelector('h1');
 const inputBtns = document.querySelectorAll('button');
 const clearBtn = document.getElementById('clear-btn');
+
 
 let firstValue = 0;
 let operatorValue = '';
@@ -59,7 +70,7 @@ function useOperator(operator) {
 
 // Add event listeners for number, operator, decimal buttons
 inputBtns.forEach((inputBtn) => {
-    if (inputBtn.classList.length === 0) {
+    if ( inputBtn.classList.length === 0) {
         inputBtn.addEventListener('click', () => sendNumberValue(inputBtn.value));
     } else if (inputBtn.classList.contains('operator')) {
         inputBtn.addEventListener('click', () => useOperator(inputBtn.value));
